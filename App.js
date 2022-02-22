@@ -1,15 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import MainNavigator from './navigation/MainNavigator';
+import cartReducer from './store/reducers/cartItem';
 import productReducer from './store/reducers/products';
 
-
 const rootReducer = combineReducers({
-  productReducer: productReducer
+  productReducer: productReducer,
+  cartReducer : cartReducer
 })
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 export default function App() {
   return (

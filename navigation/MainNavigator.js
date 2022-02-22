@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Colors from '../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import ProductOverviewScreen from '../screens/shops/ProductOverviewScreen';
+import ProductDetailsScreen from '../screens/shops/ProductDetailsScreen';
 
 const MainNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -17,9 +18,10 @@ const MainNavigator = () => {
                 headerTintColor: Platform.OS === "android" ? 'white' : Colors.primaryColor
             }}>
                 <Stack.Screen name="ProductOverviewScreen" component={ProductOverviewScreen} options={{
-                    title: "Product Details"
+                    title: "Our Products"
                 }
                 } />
+                <Stack.Screen name="ProductDetailsSceen" component={ProductDetailsScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
